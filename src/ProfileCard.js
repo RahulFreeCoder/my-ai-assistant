@@ -47,30 +47,35 @@ export default function ProfileCard() {
           <p className="text-sm text-gray-200">
             Cloud Transformation • Enterprise Resilience • Banking Domain
           </p>
-          <div className="flex gap-4 mt-2">
+         <div className="flex gap-4 mt-3">
+          <a
+            href="https://linkedin.com/in/your-linkedin"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-white hover:text-gray-300"
+          >
+            <FaLinkedin className="text-xl" />
+            <span className="text-sm">LinkedIn</span>
+          </a>
+
             <a
-              href="https://www.linkedin.com/in/rahul-kolhe-1346398/"
+              href="https://github.com/your-github"
               target="_blank"
               rel="noreferrer"
-              className="underline hover:text-gray-300"
+              className="flex items-center gap-2 text-white hover:text-gray-300"
             >
-              LinkedIn
+              <FaGithub className="text-xl" />
+              <span className="text-sm">GitHub</span>
             </a>
-            <a
-              href="https://github.com/RahulFreeCoder"
-              target="_blank"
-              rel="noreferrer"
-              className="underline hover:text-gray-300"
-            >
-              GitHub
-            </a>
+
             <a
               href="mailto:rahul.d.kolhe@gmail.com"
-              className="underline hover:text-gray-300"
+              className="flex items-center gap-2 text-white hover:text-gray-300"
             >
-              Email
+              <FaEnvelope className="text-xl" />
+              <span className="text-sm">Email</span>
             </a>
-          </div>
+        </div>
         </div>
       </div>
 
