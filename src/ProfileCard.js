@@ -68,7 +68,7 @@ export default function ProfileCard() {
             Cloud Transformation • Enterprise Resilience • Banking Domain
           </p>
           <div className="flex flex-wrap gap-4 mt-3 text-sm text-white">
-            <a className="flex items-center gap-2">
+            <a className="flex items-center gap-2" href="Tel:+918975870365">
               <FaPhone className="text-lg" />
               <span>8975870365</span>
             </a>
