@@ -10,9 +10,12 @@ export default function ProfileCard() {
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/hello`)
-      .then((res) => res.json())
-      .then((data) => console.log(data.message));
+    
+      fetch(`${API_BASE_URL}/api/hello`)
+        .then((res) => res.json())
+        .then((data) => console.log(data.message))
+        .catch((err) => console.log(err));
+
   }, []);
 
   const sendMessage = async () => {
