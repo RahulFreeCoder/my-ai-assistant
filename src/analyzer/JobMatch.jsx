@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "./config";
 
 function JobMatch() {
   const [file, setFile] = useState(null);
@@ -24,7 +25,7 @@ function JobMatch() {
     }
 
     try {
-      const res = await fetch("http://127.00.1:8000/api/match", {
+      const res = await fetch(`${API_BASE_URL}/api/match`, {
         method: "POST",
         body: formData,
         signal: AbortController.signal, // Pass the signal to fetch
