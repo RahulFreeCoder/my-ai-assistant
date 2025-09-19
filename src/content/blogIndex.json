@@ -5,5 +5,11 @@
     "date": "2025-09-18",
     "excerpt": "How I created an AI assistant to showcase skills, projects, and experience interactively.",
     "coverImage": "/images/banner.png"
+  },
+    {
+    "slug": "coding-challenge",
+    "title": "Building AI solutions using Goolge Services and Github",
+    "date": "2025-09-19",
+    "excerpt": "Idea to use Gooigle services and Github co pilot to "
   }
 ]
