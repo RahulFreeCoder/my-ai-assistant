@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
 import PostImage from './PostImage';
 
 export default function BlogPost() {
@@ -33,9 +34,16 @@ export default function BlogPost() {
        <div className="prose lg:prose-xl max-w-none">
       <ReactMarkdown components={{
         img: PostImage,
+        iframe: ({ node, ...props }) => (
+          <iframe
+            {...props}
+            style={{ width: "100%", height: "400px", border: "none",  top: 0, left: 0, }}
+            allowFullScreen
+          />
+        )
       }}
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeHighlight]}
+        rehypePlugins={[rehypeHighlight, rehypeRaw]}
       >
         {content}
       </ReactMarkdown>

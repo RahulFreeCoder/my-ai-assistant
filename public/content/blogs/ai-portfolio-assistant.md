@@ -86,3 +86,14 @@ Early feedback has been very positive:
 The AI Portfolio Assistant is my experiment in reimagining how professionals present themselves. Instead of passive resumes, we can create living, interactive career profiles.
 
 For me, this is just the beginning — a step toward smarter, conversational portfolios that showcase skills, projects, and leadership in real-time.
+
+## Demo video
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Xa8znaDo7JA" 
+  title="AI portfolio demo" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
