@@ -1,4 +1,4 @@
-Nice pick 🙌 — User Behavior Analytics with churn prediction is one of the most impactful use cases. It sits well in your Solve stage because it tackles a real business problem: retaining users.
+User Behavior Analytics with churn prediction is one of the most impactful use cases. It sits well in your Solve stage because it tackles a real business problem: retaining users.
 
 Here’s how you can break it into a coding challenge/project:
 
