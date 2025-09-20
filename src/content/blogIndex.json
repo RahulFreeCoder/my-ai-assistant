@@ -11,5 +11,11 @@
     "title": "Building AI solutions using Goolge Services and Github",
     "date": "2025-09-19",
     "excerpt": "Idea to use Gooigle services and Github co pilot to "
+  },
+  {
+    "slug": "job-match-analyzer",
+    "title": "Building Job Match View in AI Assistant Portfolio using GEMINI & Sentence-transformer LLM",
+    "date": "2025-09-20",
+    "excerpt": "Idea to use LLMs to find best JOB match and skills to learn from real world JD "
   }
 ]

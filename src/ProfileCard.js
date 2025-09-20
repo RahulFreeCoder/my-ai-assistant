@@ -73,7 +73,7 @@ export default function ProfileCard() {
           <div className="flex flex-wrap gap-4 mt-3 text-sm text-white">
             <a className="flex items-center gap-2" href="Tel:+918975870365">
               <FaPhone className="text-lg" />
-              <span>8975870365</span>
+              <span>89xxx70365</span>
             </a>
             <a
               href="mailto:rahul.d.kolhe@gmail.com"
