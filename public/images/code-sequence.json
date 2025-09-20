@@ -1,0 +1,47 @@
+title: AI Assistant Sequnce digram {
+  near: top-center
+  shape: text
+  style: {
+    font-size: 29
+    bold: true
+    underline: true
+  }
+}
+R -> F: Types a query ("What is Rahul's experience with React?")
+F -> B: Sends query via HTTP POST to /chat/query
+B -> C: Triggers "experience agent" with the query
+
+C -> GA: Sends query to Gemini Agent for processing
+
+B -> F: Sends a blank response or "Processing..." message
+
+C -> ST: **Job Match Analyzer Tab**
+Note over C,ST: **Recruiter pastes Job Description (JD)**
+
+C -> ST: **Embeds JD**
+ST -> C: Returns JD embeddings
+C -> C: **Calculates relevance score** against pre-indexed skills
+
+C -> GA: **Sends missing skills to Gemini Agent**
+GA -> GA: **Checks accuracy of missing skills**
+GA -> C: Returns validated missing skills
+
+C -> JV: **Sends missing skills and relevance score**
+JV -> C: Returns data for graphical visualization
+C -> B: Sends final analysis and scores
+B -> F: Sends JSON payload with analysis and visualization data
+F -> R: **Displays graphical analysis**
+
+explanation: |md
+  # Partcipants
+  -  R as Recruiter
+  -  F as React Frontend
+  -  B as FastAPI Backend
+  -  C as Crew AI Orchestrator
+  -  GA as Gemini Agent
+  -  ST as Sentence Transformer
+  -  GM as Gmail SMTP
+  -  DB as Logs Database
+  -  JV as Job Visualizer
+|
+

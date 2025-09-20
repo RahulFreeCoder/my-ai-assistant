@@ -22,6 +22,8 @@ I built a Job Match module that:
 ### ⚙️ Under the Hood:
 Powered by **embeddings + CrewAI orchestration**, the assistant not only checks alignment but also explains why a role is a good fit (or what to improve).
 
+![sequence diagram](/images/d2.svg)
+
 ![banner](/images/jobmatcher-SC-0920.png)
 
 ### 🌍 Why It Matters:
