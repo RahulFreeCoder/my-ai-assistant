@@ -4,6 +4,7 @@ import BlogPost from "./blogs/BlogPost";
 import ProfileCard from "./ProfileCard";
 import JobMatch from "./analyzer/JobMatch";
 import Navbar from "./NavBar";
+import Generator from "./generator/generator";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/blogs" element={<BlogList />} />
             <Route path="/blogs/:slug" element={<BlogPost />} />
             <Route path="/job-match" element={<JobMatch />} />
+            <Route path="/generate" element={<Generator />} />
           </Routes>
         </main>
       </div>
