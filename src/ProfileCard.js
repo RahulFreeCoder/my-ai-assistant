@@ -1,6 +1,7 @@
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { API_BASE_URL } from "./config";
+import SkillsGrid from './SkillsGrid';
 
 export default function ProfileCard() {
   const [messages, setMessages] = useState([
@@ -8,14 +9,24 @@ export default function ProfileCard() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [skills, setSkills] = useState([]);
+
 
   useEffect(() => {
-    
-      fetch(`${API_BASE_URL}/api/hello`)
-        .then((res) => res.json())
-        .then((data) => console.log(data.message))
-        .catch((err) => console.log(err));
+    const fetchSkills = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/hello`);
+      const data = await res.json();
+      console.log("API Response:", data);
 
+      // if skills is an array, slice top 10
+      setSkills(data.skills || []);
+    } catch (err) {
+      console.error("Error fetching skills:", err);
+    }
+  };
+
+  fetchSkills();
   }, []);
 
   const sendMessage = async () => {
@@ -105,29 +116,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Skills */}
-      <div className="px-6 pb-6">
-        <h2 className="text-lg font-semibold text-gray-700 mb-2">Skills</h2>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {[
-            "Java",
-            "Spring Boot",
-            "Microservices",
-            "ReactJS",
-            "Angular",
-            "AWS",
-            "Kubernetes",
-            "Cloud Architecture",
-          ].map((skill) => (
-            <span
-              key={skill}
-              className="bg-blue-100 text-blue-700 text-sm px-3 py-1 rounded-full"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-
+      <SkillsGrid skills={skills} />
       {/* Chat Box */}
       <div className="px-6 pb-6">
         <h2 className="text-lg font-semibold text-gray-700 mb-2">
