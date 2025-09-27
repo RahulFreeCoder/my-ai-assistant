@@ -125,7 +125,7 @@ export default function ProfileCard() {
         <h2 className="text-lg font-semibold text-gray-700 mb-2">
           Ask My AI Assistant
         </h2>
-        <div className="bg-gray-50 border rounded-lg h-[25rem] overflow-y-auto p-4 space-y-2 w-full">
+        <div className="bg-gray-50 border rounded-lg h-[23rem] overflow-y-auto p-4 space-y-2 w-full">
           {messages.map((msg, idx) => (
             <div
               key={idx}
