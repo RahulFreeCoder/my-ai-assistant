@@ -1,8 +1,10 @@
+import React from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { API_BASE_URL } from "./config";
 import SkillsGrid from './SkillsGrid';
 
+export const MemoProfileCard = React.memo(ProfileCard);
 export default function ProfileCard() {
   const [messages, setMessages] = useState([
     { sender: "bot", text: "👋 Hi, I’m Rahul’s AI Assistant. Ask me about his skills, projects, or experience!" }
@@ -10,14 +12,10 @@ export default function ProfileCard() {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [skills, setSkills] = useState([]);
-
-
-  useEffect(() => {
-    const fetchSkills = async () => {
+  const fetchSkills = async () => {
     try {
       const res = await fetch(`${API_BASE_URL}/api/hello`);
       const data = await res.json();
-      console.log("API Response:", data);
 
       // if skills is an array, slice top 10
       setSkills(data.skills || []);
@@ -26,6 +24,8 @@ export default function ProfileCard() {
     }
   };
 
+  useEffect(() => {
+    
   fetchSkills();
   }, []);
 
@@ -60,15 +60,16 @@ export default function ProfileCard() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto mt-6 bg-white shadow-2xl rounded-2xl overflow-hidden border">
+    <div className="max-w-5xl mx-auto mt-2 bg-white shadow-2xl rounded-2xl overflow-hidden border">
       {/* Banner */}
-      <div className="relative bg-tech h-56 flex items-center px-6">
+      <div className="relative bg-tech h-40 flex items-center px-6">
         {/* Avatar */}
         <div className="flex-shrink-0">
           <img
-            src="/rahulphoto.png"
+            src="/images/rahulphoto-240.webp"
             alt="Rahul Kolhe"
             className="w-32 h-32 rounded-full border-4 border-white shadow-lg"
+            fetchPriority="high"
           />
         </div>
 
@@ -112,17 +113,19 @@ export default function ProfileCard() {
               <span>GitHub</span>
             </a>
           </div>
+           
+       
         </div>
       </div>
-
       {/* Skills */}
       <SkillsGrid skills={skills} />
+
       {/* Chat Box */}
-      <div className="px-6 pb-6">
+      <div className="px-3 pb-3">
         <h2 className="text-lg font-semibold text-gray-700 mb-2">
           Ask My AI Assistant
         </h2>
-        <div className="bg-gray-50 border rounded-lg h-[30rem] overflow-y-auto p-4 space-y-2 w-full">
+        <div className="bg-gray-50 border rounded-lg h-[25rem] overflow-y-auto p-4 space-y-2 w-full">
           {messages.map((msg, idx) => (
             <div
               key={idx}
